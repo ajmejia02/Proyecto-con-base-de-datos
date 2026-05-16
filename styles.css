@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #0056b3;
+    --primary-hover: #004494;
+    --secondary-color: #6c757d;
+    --secondary-hover: #5a6268;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #dddddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #e9ecef;
+}
+
+.tab-btn.active {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 0 30px 30px 30px;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* FORMS */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+/* BUTTONS */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.actions button {
+    flex: 1;
+}
+
+/* MESSAGES */
+.mensaje {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.mensaje.success {
+    display: block;
+    background-color: #d4edda;
+    color: var(--success-color);
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje.error {
+    display: block;
+    background-color: #f8d7da;
+    color: var(--danger-color);
+    border: 1px solid #f5c6cb;
+}
+
+.mensaje.warning {
+    display: block;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* TABLE */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.deduccion-yes {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+.deduccion-no {
+    color: var(--secondary-color);
+}

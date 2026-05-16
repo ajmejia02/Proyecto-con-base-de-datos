@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Control de Empleados</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <!-- Add the Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Control de Asistencia</h1>
+
+        <div class="tabs">
+            <button id="btnTabRegistro" class="tab-btn active" onclick="mostrarTab('registro')">Registro Empleados</button>
+            <button id="btnTabAdmin" class="tab-btn" onclick="mostrarTab('adminLogin')">Panel Administrador</button>
+        </div>
+
+        <!-- Panel de Registro de Empleados -->
+        <div id="registro" class="tab-content active">
+            <h2>Registrar Entrada / Salida</h2>
+            <div class="form-group">
+                <label for="empleadoId">ID del Empleado (Ej: 0001NP):</label>
+                <input type="text" id="empleadoId" placeholder="Ingrese su ID" required>
+            </div>
+
+            <div class="actions">
+                <button id="btnEntrada" class="btn-primary" onclick="registrarAsistencia('entrada')">Registrar Entrada</button>
+                <button id="btnSalida" class="btn-secondary" onclick="registrarAsistencia('salida')">Registrar Salida</button>
+            </div>
+
+            <div id="mensajeRegistro" class="mensaje"></div>
+        </div>
+
+        <!-- Login del Administrador -->
+        <div id="adminLogin" class="tab-content">
+            <h2>Acceso Administrador</h2>
+            <div class="form-group">
+                <label for="adminPass">Contraseña:</label>
+                <input type="password" id="adminPass" placeholder="Ingrese contraseña">
+            </div>
+            <button class="btn-primary" onclick="verificarAdmin()">Ingresar</button>
+            <div id="mensajeLogin" class="mensaje error"></div>
+        </div>
+
+        <!-- Dashboard del Administrador -->
+        <div id="adminDashboard" class="tab-content">
+            <h2>Registros de Asistencia</h2>
+            <button class="btn-secondary" onclick="cerrarSesionAdmin()" style="margin-bottom: 15px;">Cerrar Sesión</button>
+            <button class="btn-primary" onclick="cargarRegistros()" style="margin-bottom: 15px;">Actualizar Lista</button>
+
+            <div class="table-responsive">
+                <table id="tablaRegistros">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>ID Empleado</th>
+                            <th>Tipo</th>
+                            <th>Hora</th>
+                            <th>Deducción (C$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaRegistros">
+                        <!-- Los registros se llenarán aquí con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Archivo de lógica de la aplicación -->
+    <script src="app.js"></script>
+</body>
+</html>
