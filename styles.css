@@ -223,3 +223,8 @@ tr:hover {
 .deduccion-no {
     color: var(--secondary-color);
 }
+
+/* ADMIN BUTTONS */
+.admin-btn {
+    margin-bottom: 15px;
+}

@@ -11,15 +11,12 @@ const DEDUCCION_TARDE = 114; // 30% de 380 Córdobas
 // Pega aquí la configuración de tu proyecto
 // ==========================================
 const firebaseConfig = {
-    // REEMPLAZA ESTO CON TUS CREDENCIALES DE FIREBASE
-    /* Ejemplo:
-    apiKey: "AIzaSyB...",
-    authDomain: "tu-proyecto.firebaseapp.com",
-    projectId: "tu-proyecto",
-    storageBucket: "tu-proyecto.appspot.com",
-    messagingSenderId: "123456789",
-    appId: "1:123456789:web:abcdef"
-    */
+    apiKey: "AIzaSyA6OsgulbUi-qAW5ssOA-alimoc-YocTl4",
+    authDomain: "apam-cafe.firebaseapp.com",
+    projectId: "apam-cafe",
+    storageBucket: "apam-cafe.appspot.com",
+    messagingSenderId: "587622813873",
+    appId: "TU_APP_ID" // Puedes cambiar "TU_APP_ID" por tu App ID real cuando lo desees
 };
 
 // Inicializar Firebase solo si hay configuración
