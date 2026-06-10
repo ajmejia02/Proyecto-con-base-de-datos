@@ -8,20 +8,12 @@ const DEDUCCION_TARDE = 114; // 30% de 380 Córdobas
 
 // ==========================================
 // CONFIGURACIÓN DE FIREBASE
-// Pega aquí la configuración de tu proyecto
+// La configuración ahora se carga desde config.js
 // ==========================================
-const firebaseConfig = {
-    apiKey: "AIzaSyDkvqUeCsbsASrDNlC37WfErmuqB0FvxLY",
-    authDomain: "apam-cafe.firebaseapp.com",
-    projectId: "apam-cafe",
-    storageBucket: "apam-cafe.firebasestorage.app",
-    messagingSenderId: "587622813873",
-    appId: "1:587622813873:web:68827f1e623ca9c0f61290"
-};
 
 // Inicializar Firebase solo si hay configuración
 let db;
-if (firebaseConfig.apiKey) {
+if (typeof firebaseConfig !== 'undefined' && firebaseConfig.apiKey) {
     firebase.initializeApp(firebaseConfig);
     db = firebase.firestore();
 } else {
